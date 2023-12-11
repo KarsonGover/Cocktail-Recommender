@@ -1,4 +1,4 @@
-from tkinter import Listbox, END, ACTIVE
+from tkinter import Listbox, END, ACTIVE, ANCHOR
 
 import customtkinter as tk
 
@@ -25,7 +25,7 @@ def update(data):
 #  Fill cocktail entry box
 def fill(e):
     purchasedCocktail.delete(0, END)
-    purchasedCocktail.insert(0, myList.get(ACTIVE))
+    purchasedCocktail.insert(0, myList.get(ANCHOR))
 
 
 #  Check entry vs listbox
@@ -80,9 +80,6 @@ myList = Listbox(master=topFrame, width=75, height=10, background="#212121", fg=
 myList.pack(pady=40)
 cocktails = cocktailList
 
-#  Add drinks to list
-update(cocktails)
-
 #  Binding on listbox click
 myList.bind("<<ListboxSelect>>", fill)
 
@@ -99,5 +96,8 @@ recommendationsLabel.pack(pady=20, padx=10)
 recommendations = tk.CTkTextbox(master=bottomFrame, width=300, wrap="word")
 recommendations.pack(pady=45)
 recommendations.configure(state="disabled")
+
+#  Add drinks to list
+update(cocktails)
 
 root.mainloop()
