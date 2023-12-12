@@ -1,3 +1,6 @@
+import tkinter.messagebox
+from types import NoneType
+
 import pandas as pd
 from matplotlib import pyplot as plt
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -23,28 +26,35 @@ indexList = pd.Series(df.index, index=df['Cocktail Name'])
 
 
 def getRecommendedDrinks(cocktailName, cosine=cos):
-    id = indexList[cocktailName]
-    similarityScores = list(enumerate(cosine[id]))
-    similarityScores = sorted(similarityScores, key=lambda x: x[1], reverse=True)
+    try:
+        id = indexList[cocktailName]
+        similarityScores = list(enumerate(cosine[id]))
+        similarityScores = sorted(similarityScores, key=lambda x: x[1], reverse=True)
 
-    # Get the top 5 similar cocktails
-    similarityScores = similarityScores[1:6]
-    cocktailIndices = [index[0] for index in similarityScores]
-    topFiveSimScores = [index[1] for index in similarityScores]
+        # Get the top 5 similar cocktails
+        similarityScores = similarityScores[1:6]
+        cocktailIndices = [index[0] for index in similarityScores]
+        topFiveSimScores = [index[1] for index in similarityScores]
 
-    topFive = df['Cocktail Name'].iloc[cocktailIndices].to_list()
+        topFive = df['Cocktail Name'].iloc[cocktailIndices].to_list()
 
-    return topFive
+        #  Displays bar graph for top five similar cocktails
+        # plt.title(f'Top Five Similar Cocktails - {cocktailName}')
+        # plt.xlabel('Similar Cocktails')
+        # plt.ylabel('Similarity Scores')
+        # plt.bar(topFive, topFiveSimScores)
+        # plt.show()
 
-    # plt.title('Top Five Similar Cocktails - Cuba Liberation')
-    # plt.xlabel('Similar Cocktails')
-    # plt.ylabel('Similarity Scores')
-    # plt.bar(topFive, topFiveSimScores)
-    # plt.show()
+        return topFive, cocktailIndices
+
+    except KeyError:
+        invalidName()
 
 
 def printDrinks(topFive):
     print(f'{topFive[0]}\n{topFive[1]}\n{topFive[2]}\n{topFive[3]}\n{topFive[4]}')
 
 
-# getRecommendedDrinks("Cuba Liberation")
+def invalidName():
+    tkinter.messagebox.showerror("Cocktail Not Found",
+                                 "There is no cocktail with that name in this database. Please choose another.")
