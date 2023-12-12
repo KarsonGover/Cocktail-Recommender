@@ -22,7 +22,7 @@ vecMatrix = v.fit_transform(df['Ingredients'])
 cos = linear_kernel(vecMatrix)
 
 #  Creates one-dimensional list of cocktail names and their indices
-indexList = pd.Series(df.index, index=df['Cocktail Name'])
+indexList = pd.Series(df.index, index=df['Cocktail Name']).drop_duplicates()
 
 
 def getRecommendedDrinks(cocktailName, cosine=cos):
@@ -39,11 +39,11 @@ def getRecommendedDrinks(cocktailName, cosine=cos):
         topFive = df['Cocktail Name'].iloc[cocktailIndices].to_list()
 
         #  Displays bar graph for top five similar cocktails
-        # plt.title(f'Top Five Similar Cocktails - {cocktailName}')
-        # plt.xlabel('Similar Cocktails')
-        # plt.ylabel('Similarity Scores')
-        # plt.bar(topFive, topFiveSimScores)
-        # plt.show()
+        plt.title(f'Top Five Similar Cocktails - {cocktailName}')
+        plt.xlabel('Similar Cocktails')
+        plt.ylabel('Similarity Scores')
+        plt.bar(topFive, topFiveSimScores)
+        plt.show()
 
         return topFive, cocktailIndices
 

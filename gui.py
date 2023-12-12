@@ -53,13 +53,15 @@ def getRecommendedDrinks(entry):
     if recommendationsList:
         recommendationsList.delete("0.0", END)
 
-    i = 0
-    for cocktail in topFive:
+    i = 4
+    for cocktail in reversed(topFive):
         recommendationsList.insert("0.0", cocktail + ":  " +
                                    main.df['Ingredients'].iloc[topFiveIndices[i]] + "\n\n")
-        i += 1
+        i -= 1
 
     recommendationsList.configure(state="disable")
+
+    print("Recommendations have been generated.")
 
 
 #  Top frame
