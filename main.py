@@ -1,7 +1,7 @@
 import tkinter.messagebox
-from types import NoneType
 
 import pandas as pd
+
 from matplotlib import pyplot as plt
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
@@ -14,7 +14,6 @@ v = TfidfVectorizer()
 
 df['Cocktail Name'].fillna('')
 df['Ingredients'].fillna('')
-df['Garnish'].fillna('')
 
 vecMatrix = v.fit_transform(df['Ingredients'])
 
