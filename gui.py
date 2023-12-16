@@ -1,7 +1,5 @@
 from tkinter import Listbox, END, ANCHOR, BOTTOM
-
 import customtkinter as tk
-
 import main
 
 tk.set_appearance_mode("System")

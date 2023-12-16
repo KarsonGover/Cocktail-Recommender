@@ -1,7 +1,5 @@
 import tkinter.messagebox
-
 import pandas as pd
-
 from matplotlib import pyplot as plt
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
@@ -38,11 +36,11 @@ def getRecommendedDrinks(cocktailName, cosine=cos):
         topFive = df['Cocktail Name'].iloc[cocktailIndices].to_list()
 
         #  Displays bar graph for top five similar cocktails
-        plt.title(f'Top Five Similar Cocktails - {cocktailName}')
-        plt.xlabel('Similar Cocktails')
-        plt.ylabel('Similarity Scores')
-        plt.bar(topFive, topFiveSimScores)
-        plt.show()
+        # plt.title(f'Top Five Similar Cocktails - {cocktailName}')
+        # plt.xlabel('Similar Cocktails')
+        # plt.ylabel('Similarity Scores')
+        # plt.bar(topFive, topFiveSimScores)
+        # plt.show()
 
         return topFive, cocktailIndices
 
