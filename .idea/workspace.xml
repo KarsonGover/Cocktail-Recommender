@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67511521-df75-44b6-bda4-2334caadc2cf" name="Changes" comment="12/12/2023">
+    <list default="true" id="67511521-df75-44b6-bda4-2334caadc2cf" name="Changes" comment="12/15/2023">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv/cocktails_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/cocktails_data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702419106430</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="12/15/2023">
+      <option name="closed" value="true" />
+      <created>1702688001356</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1702688001356</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,6 +233,7 @@
     <MESSAGE value="Repository creation." />
     <MESSAGE value="12/11/2023" />
     <MESSAGE value="12/12/2023" />
-    <option name="LAST_COMMIT_MESSAGE" value="12/12/2023" />
+    <MESSAGE value="12/15/2023" />
+    <option name="LAST_COMMIT_MESSAGE" value="12/15/2023" />
   </component>
 </project>

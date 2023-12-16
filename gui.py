@@ -1,4 +1,4 @@
-from tkinter import Listbox, END, ANCHOR, BOTTOM
+from tkinter import Listbox, END, ANCHOR
 import customtkinter as tk
 import main
 
